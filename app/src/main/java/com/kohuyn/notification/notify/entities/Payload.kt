@@ -6,8 +6,10 @@ import android.graphics.Bitmap
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
+import android.widget.RemoteViews
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
+import androidx.annotation.LayoutRes
 import androidx.core.app.NotificationCompat
 import androidx.core.graphics.drawable.IconCompat
 import com.kohuyn.notification.notify.Notify
@@ -283,6 +285,10 @@ sealed class Payload {
              */
             var messages: List<NotificationCompat.MessagingStyle.Message> = ArrayList()
         ) : Content(), SupportsLargeIcon
+
+        data class CustomView(
+            var remoteView: RemoteViews? = null
+        ) : Content()
     }
 
     /**

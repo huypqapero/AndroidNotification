@@ -1,5 +1,6 @@
 package com.kohuyn.notification.notify.internal
 
+import android.app.Notification
 import android.app.NotificationManager
 import android.os.Build
 import android.text.Html
@@ -298,6 +299,10 @@ internal object NotificationInterop {
                     .also { s ->
                         content.messages.forEach { s.addMessage(it.text, it.timestamp, it.sender) }
                     }
+            }
+            is Payload.Content.CustomView -> {
+                builder.setCustomContentView(content.remoteView)
+                NotificationCompat.DecoratedCustomViewStyle()
             }
         }
     }

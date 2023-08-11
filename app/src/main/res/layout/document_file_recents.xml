@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layoutNotifyBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivNotifyIconApp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_launcher_foreground"/>
+
+            <TextView
+                android:id="@+id/tvNotifyNameApp"
+                android:layout_width="0dp"
+                android:layout_toStartOf="@id/ivNotifyActionPlus"
+                android:layout_toEndOf="@id/ivNotifyIconApp"
+                android:layout_height="wrap_content"
+                android:text="App Name"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/ivNotifyActionPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/ivNotifyActionExpand"
+                android:layout_marginEnd="16dp"
+                android:text="Open recent"/>
+
+            <TextView
+                android:id="@+id/ivNotifyActionExpand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Expand" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

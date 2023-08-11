@@ -103,6 +103,11 @@ class NotifyCreator internal constructor(private val notify: Notify) {
         return this
     }
 
+    fun asCustomView(init: Payload.Content.CustomView.() -> Unit): NotifyCreator {
+        this.content = Payload.Content.CustomView().also(init)
+        return this
+    }
+
     /**
      * Scoped function for modifying the 'Actions' of a notification. The transformation
      * relies on adding standard notification Action objects.
